@@ -134,30 +134,65 @@
 // }
 
 // // acceder a cada atributo del objeto
-//  console.log(persona);
-//  console.log(persona["nombre"]);
+//   console.log(persona.profesion, persona.nombre);
+//   console.log(persona["nombre"]);
 
 
 // cuando tenemos la necesidad de tener mas objetos en este caso tipo persona
 // o personas con diferentes o mas valores
 // vamos a usar object contructor
 
+// const persona = {
+//     nombre: 'Adrian',
+//     profesion: 'Dev Web'
+// }
+
 // function Tarea(aprender, prioridad) {
 //     this.aprender = aprender;
 //     this.prioridad = prioridad;
 // }
-// // crear una nueva tarea
+// // // crear una nueva tarea
 
-// // ventaja de esta forma de crear objetos es que podemos tener copias del mismo
-// // y cambiar valores
+// // // ventaja de esta forma de crear objetos es que podemos tener copias del mismo
+// // // y cambiar valores
 
 // const tarea1 = new Tarea('Aprender JS y React', 'Urgente')
-// const tarea2 = new Tarea('Aprender JS y React', 'Urgente')
 // const tarea3 = new Tarea('Prepara Cafe', 'Urgente')
 // const tarea4 = new Tarea('Pasear al perro', 'Media')
 
-// console.log("tarea1: ",tarea1);
-// console.log("tarea2: ",tarea2);
+// console.log("tarea1: ",tarea1.aprender);
 // console.log("tarea3: ",tarea3);
 // console.log("tarea4: ",tarea4);
 
+////////////////////////////// Prototypes - Funciones en Objetos //////////////////////////////////////
+
+// ejemplo
+function mostrarInformacionTarea(tarea, prioridad) {
+    return `La tarea ${tarea} tiene una prioridad de ${prioridad}`
+}
+
+
+// // Object Literal
+const persona1 = {
+    nombre: 'juan',
+    profesion: 'Dev Web',
+    edad: 50
+}
+ console.log(persona1);
+
+// // Object Constructor
+function Tarea(nombre, urgencia) {
+    this.nombre = nombre;
+    this.urgencia = urgencia;
+}
+
+// // crear una nueva tarea
+const tarea1 = new Tarea('Aprender JS y React', 'Urgente');
+const tarea2 = new Tarea('Aprender a cocinar', 'medio');
+
+const mostrarInfo = mostrarInformacionTarea(tarea1.nombre, tarea1.urgencia);
+console.log(mostrarInfo)
+
+
+
+// hacer un objeto, y mostrlo en la web / html
